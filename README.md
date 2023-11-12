@@ -1,1 +1,1 @@
-# speedketchup-files
+Just a bunch of binary files like images and release build artifacts that get linked to from [speedketchup](https://github.com/gatispei/speedketchup) README and I don't want them in my main speedketchup src repo.
