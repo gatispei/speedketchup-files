@@ -1,0 +1,25 @@
+#!/usr/bin/ruby
+
+def file_link(fn)
+  size = File.stat("bin/speedketchup-#{fn}").size / 1000
+  "[#{size}k](https://github.com/gatispei/speedketchup-files/blob/main/bin/speedketchup-#{fn})"
+end
+
+table = [
+  [ "linux x86_64", file_link("x64"), file_link("x64-upx") ],
+  [ "linux aarch64", file_link("aarch64"), file_link("aarch64-upx") ],
+  [ "linux arm", file_link("arm"), file_link("arm-upx") ],
+  [ "windows x86_64", file_link("x64.exe"), file_link("x64-upx.exe") ],
+  [ "macos universal (x86_64 + aarch64)", file_link("macos")],
+]
+prefix = "|-|-|-|\n"
+postfix = "\n### Builtin"
+t = table.map { |row|
+  "|" + row.join("|") + "|"
+}.join("\n") + "\n"
+
+rf = "../speedketchup/README.md"
+readme = File.read(rf)
+readme.sub!(/\|-\|-\|-\|\n.+\n### Builtin/m, prefix + t + postfix)
+#puts readme
+File.write(rf, readme)
