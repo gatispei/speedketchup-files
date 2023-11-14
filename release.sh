@@ -9,7 +9,7 @@ cp ../speedketchup/target/aarch64-unknown-linux-musl/release/speedketchup bin/sp
 cp ../speedketchup/target/arm-unknown-linux-musleabi/release/speedketchup bin/speedketchup-arm
 cp ../speedketchup/target/x86_64-pc-windows-gnu/release/speedketchup.exe bin/speedketchup-x64.exe
 
-upx -o bin/speedketchup-x64-upx bin/speedketchup-x64
-upx -o bin/speedketchup-aarch64-upx bin/speedketchup-aarch64
-upx -o bin/speedketchup-arm-upx bin/speedketchup-arm
-upx -o bin/speedketchup-x64-upx.exe bin/speedketchup-x64.exe
+~/opensource/upx/build/release/upx --brute -o bin/speedketchup-x64-upx bin/speedketchup-x64
+~/opensource/upx/build/release/upx --brute -o bin/speedketchup-aarch64-upx bin/speedketchup-aarch64
+~/opensource/upx/build/release/upx --brute -o bin/speedketchup-arm-upx bin/speedketchup-arm
+~/opensource/upx/build/release/upx --brute -o bin/speedketchup-x64-upx.exe bin/speedketchup-x64.exe
