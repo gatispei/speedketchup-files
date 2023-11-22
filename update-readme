@@ -7,6 +7,7 @@ end
 
 table = [
   [ "linux x86_64", file_link("x64"), file_link("x64-upx") ],
+  [ "linux i686", file_link("i686"), file_link("i686-upx") ],
   [ "linux aarch64", file_link("aarch64"), file_link("aarch64-upx") ],
   [ "linux arm", file_link("arm"), file_link("arm-upx") ],
   [ "windows x86_64", file_link("x64.exe"), file_link("x64-upx.exe") ],

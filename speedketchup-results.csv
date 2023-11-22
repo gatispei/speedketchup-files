@@ -1,2 +1,0 @@
-Timestamp,LatencyIdle(ms),LatencyDownload(ms),LatencyUpload(ms),Download(Mbps),Upload(Mbps),ClientPublicIP,ClientISP,ServerDescr,ServerHost,Error
-2023.11.12-22:35:41,1.56,4.64,11.8,696,391,212.3.194.48,"Latvijas Mobilais Telefons SIA","",192.168.88.42:8080,
