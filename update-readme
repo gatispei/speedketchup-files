@@ -10,6 +10,8 @@ table = [
   [ "linux i686", file_link("i686"), file_link("i686-upx") ],
   [ "linux aarch64", file_link("aarch64"), file_link("aarch64-upx") ],
   [ "linux arm", file_link("arm"), file_link("arm-upx") ],
+  [ "linux mips", file_link("mips"), file_link("mips-upx") ],
+  [ "linux mipsel", file_link("mipsel"), file_link("mipsel-upx") ],
   [ "windows x86_64", file_link("x64.exe"), file_link("x64-upx.exe") ],
   [ "macos universal (x86_64 + aarch64)", file_link("macos")],
 ]
