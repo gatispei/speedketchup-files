@@ -24,7 +24,7 @@ cp ../speedketchup/target/x86_64-pc-windows-gnu/release/speedketchup.exe bin/spe
 cp ../speedketchup/target/mips-unknown-linux-musl/release/speedketchup bin/speedketchup-mips
 cp ../speedketchup/target/mipsel-unknown-linux-musl/release/speedketchup bin/speedketchup-mipsel
 
-x86_64-linux-gnu-strip bin/speedketchup-x84
+x86_64-linux-gnu-strip bin/speedketchup-x64
 x86_64-linux-gnu-strip bin/speedketchup-i686
 aarch64-linux-gnu-strip bin/speedketchup-aarch64
 arm-linux-gnueabi-strip bin/speedketchup-arm
