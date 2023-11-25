@@ -12,8 +12,7 @@ cargo build --release \
 	 --target mipsel-unknown-linux-musl
 
 
-#cargo +nightly bloat -Z build-std=std,panic_abort -Z build-std-features=panic_immediate_abort --release -n 100 \
-#	 --target x86_64-unknown-linux-musl \
+RUSTFLAGS="-Zlocation-detail=none" cargo +nightly bloat -Z build-std=std,panic_abort -Z build-std-features=panic_immediate_abort --release --target x86_64-unknown-linux-musl -n 100
 
 cd -
 
@@ -25,10 +24,19 @@ cp ../speedketchup/target/x86_64-pc-windows-gnu/release/speedketchup.exe bin/spe
 cp ../speedketchup/target/mips-unknown-linux-musl/release/speedketchup bin/speedketchup-mips
 cp ../speedketchup/target/mipsel-unknown-linux-musl/release/speedketchup bin/speedketchup-mipsel
 
+x86_64-linux-gnu-strip bin/speedketchup-x86
+x86_64-linux-gnu-strip bin/speedketchup-i686
+aarch64-linux-gnu-strip bin/speedketchup-aarch64
+arm-linux-gnueabi-strip bin/speedketchup-arm
+mips-linux-gnu-strip bin/speedketchup-mips
+mipsel-linux-gnu-strip bin/speedketchup-mipsel
+x86_64-w64-mingw32-strip bin/speedketchup-x86.exe
+
+
 rm bin/speedketchup*upx*
 ~/opensource/upx/build/release/upx --ultra-brute -o bin/speedketchup-x64-upx bin/speedketchup-x64
 ~/opensource/upx/build/release/upx --ultra-brute -o bin/speedketchup-i686-upx bin/speedketchup-i686
-~/opensource/upx/build/release/upx --ultra-brute -o bin/speedketchup-aarch64-upx bin/speedketchup-aarch64
+~/upx-4.0.1 -9 -o bin/speedketchup-aarch64-upx bin/speedketchup-aarch64
 ~/opensource/upx/build/release/upx --ultra-brute -o bin/speedketchup-arm-upx bin/speedketchup-arm
 ~/opensource/upx/build/release/upx --ultra-brute -o bin/speedketchup-x64-upx.exe bin/speedketchup-x64.exe
 ~/opensource/upx/build/release/upx --ultra-brute -o bin/speedketchup-mips-upx bin/speedketchup-mips
